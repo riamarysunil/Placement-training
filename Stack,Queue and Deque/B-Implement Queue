@@ -1,0 +1,27 @@
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main() {
+    int t;
+    queue<int> q;
+    cin >> t;
+
+    while (t--) {
+        string command;
+        cin >> command;
+
+        if (command == "Enqueue") {
+            int x;
+            cin >> x;
+            q.push(x);
+        } else if (command == "Dequeue") {
+            if (q.empty()) {
+                cout << "Empty" << endl;
+            } else {
+                cout << q.front() << endl;
+                q.pop(); 
+            }
+        }
+    }
+}
