@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cctype>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    cin.ignore();
+    string s;
+    getline(cin, s); 
+    bool seen[26] = {false};
+    for (char c : s) {
+        if (isalpha(c)) {
+            c = tolower(c); 
+            seen[c - 'a'] = true; 
+        }
+    }
+    for (bool has_seen : seen) {
+        if (!has_seen) {
+            cout << "NO" << endl;
+            return 0;
+        }
+    }
+    cout << "YES" << endl;
+    return 0;
+}
