@@ -1,0 +1,27 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main() {
+    int t;
+    stack<int> st;
+    cin >> t;
+
+    while (t--) {
+        string command;
+        cin >> command;
+
+        if (command == "push") {
+            int x;
+            cin >> x;
+            st.push(x);
+        } else if (command == "pop") {
+            if (st.empty()) {
+                cout << "Empty" << endl;
+            } else {
+                cout << st.top() << endl;
+                st.pop(); 
+            }
+        }
+    }
+}
